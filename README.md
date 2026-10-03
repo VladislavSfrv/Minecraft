@@ -43,17 +43,29 @@ scss/
 
 ## 🛠️ Инструкция по локальному запуску
 
-Для компиляции и автоматического отслеживания изменений в модулях SCSS используется официальный компилятор **Dart Sass**.
+Для локального запуска используйте Vite:
 
-1. Установите компилятор глобально в систему (требуется Node.js):
-   ```bash
-   npm install -g sass
-   ```
+```bash
+npm ci
+npm run dev
+```
 
-2. Запустите автоматическую сборку проекта в корень (режим отслеживания):
-   ```bash
-   sass scss/style.scss style.css --watch
-   ```
+Чтобы проверить production-сборку:
+
+```bash
+npm run build
+```
+
+## 🌐 Публикация на GitHub Pages
+
+Workflow `.github/workflows/deploy-pages.yml` автоматически собирает и публикует сайт на GitHub Pages при каждом push в ветку `main`. Для первой публикации в настройках репозитория откройте **Settings → Pages** и выберите **GitHub Actions** в качестве источника сборки. После завершения workflow ссылка на сайт появится в разделе Pages.
+
+Для ручной компиляции SCSS в `style.css` можно использовать Dart Sass:
+
+```bash
+npm install -g sass
+sass scss/style.scss style.css --watch
+```
 
 ---
 
